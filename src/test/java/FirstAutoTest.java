@@ -1,20 +1,10 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideWait;
-import com.codeborne.selenide.commands.Click;
-import com.sun.org.apache.xpath.internal.compiler.Keywords;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.Select;
 
-import java.util.concurrent.TimeUnit;
+
 
 public class FirstAutoTest {
 
@@ -32,9 +22,7 @@ public void FirstAutoTest() {
 
         Selenide.open("https://next.privat24.ua/money-transfer/card");
 
-        WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
 
         Selenide.$(By.cssSelector("input[data-qa-node=numberdebitSource]")).sendKeys("4552331448138217");
         Selenide.$(By.cssSelector("input[data-qa-node=expiredebitSource]")).sendKeys("05/24");
